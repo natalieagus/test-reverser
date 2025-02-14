@@ -17,12 +17,12 @@ module alchitry_top (
         input wire [2:0][7:0] io_dip
     );
     logic rst;
-    localparam _MP_STAGES_1782731998 = 3'h4;
+    localparam _MP_STAGES_951900299 = 3'h4;
     logic M_reset_cond_in;
     logic M_reset_cond_out;
     
     reset_conditioner #(
-        .STAGES(_MP_STAGES_1782731998)
+        .STAGES(_MP_STAGES_951900299)
     ) reset_cond (
         .clk(clk),
         .in(M_reset_cond_in),
@@ -30,14 +30,14 @@ module alchitry_top (
     );
     
     
-    localparam _MP_ROW_DIMENSION_1681634481 = 5'h10;
-    localparam _MP_COLUMN_DIMENSION_1681634481 = 5'h10;
+    localparam _MP_ROW_DIMENSION_318018662 = 5'h10;
+    localparam _MP_COLUMN_DIMENSION_318018662 = 5'h10;
     logic [7:0] M_reverser_input_address;
     logic [7:0] M_reverser_output_address;
     
     index_reverser #(
-        .ROW_DIMENSION(_MP_ROW_DIMENSION_1681634481),
-        .COLUMN_DIMENSION(_MP_COLUMN_DIMENSION_1681634481)
+        .ROW_DIMENSION(_MP_ROW_DIMENSION_318018662),
+        .COLUMN_DIMENSION(_MP_COLUMN_DIMENSION_318018662)
     ) reverser (
         .input_address(M_reverser_input_address),
         .output_address(M_reverser_output_address)

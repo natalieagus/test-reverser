@@ -14,12 +14,9 @@ module index_reverser #(
     localparam ODD_BIT_INDEX = $clog2(COLUMN_DIMENSION);
     localparam MASK = ODD_BIT_INDEX - 1'h1;
     localparam MSB_INDEX = $clog2(ROW_DIMENSION * COLUMN_DIMENSION) - 1'h1;
-    logic [(ODD_BIT_INDEX)-1:0] lower_bits_value;
     always @* begin
-        lower_bits_value = 1'h0;
         if (input_address[ODD_BIT_INDEX]) begin
-            lower_bits_value = COLUMN_DIMENSION - 1'h1 - input_address[MASK:1'h0];
-            output_address = {input_address[MSB_INDEX:ODD_BIT_INDEX], lower_bits_value};
+            output_address = {input_address[MSB_INDEX:ODD_BIT_INDEX], input_address[MASK:1'h0] ^ {ODD_BIT_INDEX{1'h1}}};
         end else begin
             output_address = input_address;
         end
