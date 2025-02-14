@@ -7,7 +7,7 @@
 <Project Product="Vivado" Version="7" Minor="65" Path="/media/share/Alchitry/test-reverser/build/vivado/test-reverser.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="2b762bd412bc49739e146eef6a55e537"/>
+    <Option Name="Id" Val="2203c60ba98a489482fef52eabf13ba5"/>
     <Option Name="Part" Val="xc7a35tftg256-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -93,16 +93,16 @@
       <File Path="$PSRCDIR/sources_1/imports/source/index_reverser.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../source/index_reverser.sv"/>
-          <Attr Name="ImportTime" Val="1739503528"/>
+          <Attr Name="ImportTime" Val="1739517113"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/source/index_reverser_hardcoded.sv">
+      <File Path="$PSRCDIR/sources_1/imports/source/index_reverser_hybrid.sv">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../source/index_reverser_hardcoded.sv"/>
-          <Attr Name="ImportTime" Val="1739503528"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../source/index_reverser_hybrid.sv"/>
+          <Attr Name="ImportTime" Val="1739517113"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -111,7 +111,7 @@
       <File Path="$PSRCDIR/sources_1/imports/source/reset_conditioner.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../source/reset_conditioner.sv"/>
-          <Attr Name="ImportTime" Val="1739503528"/>
+          <Attr Name="ImportTime" Val="1739517113"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -120,7 +120,7 @@
       <File Path="$PSRCDIR/sources_1/imports/source/alchitry_top.sv">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../source/alchitry_top.sv"/>
-          <Attr Name="ImportTime" Val="1739503528"/>
+          <Attr Name="ImportTime" Val="1739517113"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -130,7 +130,7 @@
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../source/lucid_globals.sv"/>
-          <Attr Name="ImportTime" Val="1739503528"/>
+          <Attr Name="ImportTime" Val="1739517113"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>

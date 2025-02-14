@@ -11,9 +11,10 @@ module index_reverser #(
         input wire [($clog2(ROW_DIMENSION * COLUMN_DIMENSION))-1:0] input_address,
         output reg [($clog2(ROW_DIMENSION * COLUMN_DIMENSION))-1:0] output_address
     );
+    localparam SIZE = $clog2(ROW_DIMENSION * COLUMN_DIMENSION);
     localparam ODD_BIT_INDEX = $clog2(COLUMN_DIMENSION);
     localparam MASK = ODD_BIT_INDEX - 1'h1;
-    localparam MSB_INDEX = $clog2(ROW_DIMENSION * COLUMN_DIMENSION) - 1'h1;
+    localparam MSB_INDEX = SIZE - 1'h1;
     always @* begin
         if (input_address[ODD_BIT_INDEX]) begin
             output_address = {input_address[MSB_INDEX:ODD_BIT_INDEX], input_address[MASK:1'h0] ^ {ODD_BIT_INDEX{1'h1}}};

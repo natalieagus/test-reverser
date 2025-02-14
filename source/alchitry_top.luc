@@ -19,8 +19,13 @@ module alchitry_top (
         reset_conditioner reset_cond
     }
     
-    index_reverser reverser(#COLUMN_DIMENSION(16), #ROW_DIMENSION(16))
-    index_reverser_hardcoded reverser_hardcoded
+    const COLUMN_DIMENSION = 16
+    const ROW_DIMENSION = 16
+    
+    index_reverser reverser(#COLUMN_DIMENSION(COLUMN_DIMENSION), #ROW_DIMENSION(ROW_DIMENSION))
+
+    const SIZE = $clog2(COLUMN_DIMENSION * ROW_DIMENSION)
+    index_reverser_hybrid reverser_hybrid(#COLUMN_DIMENSION(COLUMN_DIMENSION), #ROW_DIMENSION(ROW_DIMENSION), #SIZE(SIZE))
     
     const LED_COLORS = {
         2b10,
@@ -55,16 +60,18 @@ module alchitry_top (
         io_led = 3x{{8h00}}
         io_segment = 8hff
         io_select = 4hf
-        reverser.input_address = io_dip[0]
-        reverser_hardcoded.input_address = io_dip[0] 
+        reverser.input_address = io_dip[0] 
+        reverser_hybrid.input_address = io_dip[0]
         
-        if (io_dip[2][7]){            
+        if (io_dip[2][7]){
+            led = b01
             io_led[2] = reverser.output_address
             color_index = reverser.output_address
         }
-        else{     
-            io_led[2] = reverser_hardcoded.output_address
-            color_index = reverser_hardcoded.output_address
+        else{
+            led = b11     
+            io_led[2] = reverser_hybrid.output_address
+            color_index = reverser_hybrid.output_address
         }
         
         io_led[0] = io_dip[0]

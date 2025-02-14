@@ -4,14 +4,14 @@
     This is a temporary file and any changes made to it will be destroyed.
 */
 
-module index_reverser #(
+module index_reverser_hybrid #(
         parameter ROW_DIMENSION = 4'h8,
-        parameter COLUMN_DIMENSION = 4'h8
+        parameter COLUMN_DIMENSION = 4'h8,
+        parameter SIZE = 4'h8
     ) (
-        input wire [($clog2(ROW_DIMENSION * COLUMN_DIMENSION))-1:0] input_address,
-        output reg [($clog2(ROW_DIMENSION * COLUMN_DIMENSION))-1:0] output_address
+        input wire [(SIZE)-1:0] input_address,
+        output reg [(SIZE)-1:0] output_address
     );
-    localparam SIZE = $clog2(ROW_DIMENSION * COLUMN_DIMENSION);
     localparam ODD_BIT_INDEX = $clog2(COLUMN_DIMENSION);
     localparam MASK = ODD_BIT_INDEX - 1'h1;
     localparam MSB_INDEX = SIZE - 1'h1;

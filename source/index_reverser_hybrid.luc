@@ -1,13 +1,17 @@
-module index_reverser_hardcoded (
-    input input_address[8],
-    output output_address[8]
+module index_reverser_hybrid#(
+    ROW_DIMENSION = 8 : ROW_DIMENSION > 1,
+    COLUMN_DIMENSION = 8 : COLUMN_DIMENSION > 1,
+    SIZE = 8 : SIZE > 1
+) (
+    input input_address[SIZE],
+    output output_address[SIZE]
 ) {
-    const ODD_BIT_INDEX = 4
-    const MASK = 3
-    const MSB_INDEX = 7
-   
+    const ODD_BIT_INDEX = $clog2(COLUMN_DIMENSION)
+    const MASK = ODD_BIT_INDEX - 1
+    const MSB_INDEX = SIZE - 1
     
     always {
+
         // check if we are at odd rows 
         if (input_address[ODD_BIT_INDEX]){
             output_address = c{input_address[MSB_INDEX:ODD_BIT_INDEX], input_address[MASK:0] ^ ODD_BIT_INDEXx{b1} }

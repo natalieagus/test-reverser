@@ -85,7 +85,7 @@ OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
   /media/share/Alchitry/test-reverser/build/vivado/test-reverser.srcs/sources_1/imports/source/index_reverser.sv
-  /media/share/Alchitry/test-reverser/build/vivado/test-reverser.srcs/sources_1/imports/source/index_reverser_hardcoded.sv
+  /media/share/Alchitry/test-reverser/build/vivado/test-reverser.srcs/sources_1/imports/source/index_reverser_hybrid.sv
   /media/share/Alchitry/test-reverser/build/vivado/test-reverser.srcs/sources_1/imports/source/reset_conditioner.sv
   /media/share/Alchitry/test-reverser/build/vivado/test-reverser.srcs/sources_1/imports/source/alchitry_top.sv
 }

@@ -17,12 +17,12 @@ module alchitry_top (
         input wire [2:0][7:0] io_dip
     );
     logic rst;
-    localparam _MP_STAGES_951900299 = 3'h4;
+    localparam _MP_STAGES_988298862 = 3'h4;
     logic M_reset_cond_in;
     logic M_reset_cond_out;
     
     reset_conditioner #(
-        .STAGES(_MP_STAGES_951900299)
+        .STAGES(_MP_STAGES_988298862)
     ) reset_cond (
         .clk(clk),
         .in(M_reset_cond_in),
@@ -30,26 +30,36 @@ module alchitry_top (
     );
     
     
-    localparam _MP_ROW_DIMENSION_318018662 = 5'h10;
-    localparam _MP_COLUMN_DIMENSION_318018662 = 5'h10;
+    localparam COLUMN_DIMENSION = 5'h10;
+    localparam ROW_DIMENSION = 5'h10;
+    localparam _MP_ROW_DIMENSION_2138499389 = 5'h10;
+    localparam _MP_COLUMN_DIMENSION_2138499389 = 5'h10;
     logic [7:0] M_reverser_input_address;
     logic [7:0] M_reverser_output_address;
     
     index_reverser #(
-        .ROW_DIMENSION(_MP_ROW_DIMENSION_318018662),
-        .COLUMN_DIMENSION(_MP_COLUMN_DIMENSION_318018662)
+        .ROW_DIMENSION(_MP_ROW_DIMENSION_2138499389),
+        .COLUMN_DIMENSION(_MP_COLUMN_DIMENSION_2138499389)
     ) reverser (
         .input_address(M_reverser_input_address),
         .output_address(M_reverser_output_address)
     );
     
     
-    logic [7:0] M_reverser_hardcoded_input_address;
-    logic [7:0] M_reverser_hardcoded_output_address;
+    localparam SIZE = 4'h8;
+    localparam _MP_ROW_DIMENSION_859725186 = 5'h10;
+    localparam _MP_COLUMN_DIMENSION_859725186 = 5'h10;
+    localparam _MP_SIZE_859725186 = 4'h8;
+    logic [7:0] M_reverser_hybrid_input_address;
+    logic [7:0] M_reverser_hybrid_output_address;
     
-    index_reverser_hardcoded reverser_hardcoded (
-        .input_address(M_reverser_hardcoded_input_address),
-        .output_address(M_reverser_hardcoded_output_address)
+    index_reverser_hybrid #(
+        .ROW_DIMENSION(_MP_ROW_DIMENSION_859725186),
+        .COLUMN_DIMENSION(_MP_COLUMN_DIMENSION_859725186),
+        .SIZE(_MP_SIZE_859725186)
+    ) reverser_hybrid (
+        .input_address(M_reverser_hybrid_input_address),
+        .output_address(M_reverser_hybrid_output_address)
     );
     
     
@@ -64,13 +74,15 @@ module alchitry_top (
         io_segment = 8'hff;
         io_select = 4'hf;
         M_reverser_input_address = io_dip[1'h0];
-        M_reverser_hardcoded_input_address = io_dip[1'h0];
+        M_reverser_hybrid_input_address = io_dip[1'h0];
         if (io_dip[2'h2][3'h7]) begin
+            led = 2'h1;
             io_led[2'h2] = M_reverser_output_address;
             color_index = M_reverser_output_address;
         end else begin
-            io_led[2'h2] = M_reverser_hardcoded_output_address;
-            color_index = M_reverser_hardcoded_output_address;
+            led = 2'h3;
+            io_led[2'h2] = M_reverser_hybrid_output_address;
+            color_index = M_reverser_hybrid_output_address;
         end
         io_led[1'h0] = io_dip[1'h0];
         io_led[1'h1] = LED_COLORS[color_index];
