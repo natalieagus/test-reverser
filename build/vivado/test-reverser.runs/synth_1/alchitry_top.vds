@@ -245,3 +245,81 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.793 ; gain = 646.105 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.809 ; gain = 646.121 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.848 ; gain = 646.160 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.855 ; gain = 646.168 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.871 ; gain = 646.184 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.875 ; gain = 646.188 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT2 |     4|
+|2     |LUT3 |     4|
+|3     |LUT5 |     2|
+|4     |IBUF |    10|
+|5     |OBUF |    45|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.906 ; gain = 646.219 ; free physical = 1136 ; free virtual = 14792
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 49 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2888.949 ; gain = 527.074 ; free physical = 1136 ; free virtual = 14792
+Synthesis Optimization Complete : Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 2888.961 ; gain = 646.262 ; free physical = 1136 ; free virtual = 14792
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2889.051 ; gain = 0.008 ; free physical = 1136 ; free virtual = 14792
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2922.551 ; gain = 0.000 ; free physical = 1519 ; free virtual = 15175
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 1b86aa49
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 98 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:28 . Memory (MB): peak = 2924.594 ; gain = 1054.180 ; free physical = 1517 ; free virtual = 15173
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 2333.944; main = 1898.531; forked = 494.173
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 4324.941; main = 2922.617; forked = 1437.219
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2947.922 ; gain = 0.406 ; free physical = 1512 ; free virtual = 15168
+INFO: [Common 17-1381] The checkpoint '/media/share/Alchitry/test-reverser/build/vivado/test-reverser.runs/synth_1/alchitry_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file alchitry_top_utilization_synth.rpt -pb alchitry_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 13 19:06:16 2025...
