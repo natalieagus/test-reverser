@@ -61,13 +61,12 @@ module alchitry_top (
         if (io_dip[2][7]){            
             io_led[2] = reverser.output_address
             color_index = reverser.output_address
-            
         }
         else{     
             io_led[2] = reverser_hardcoded.output_address
             color_index = reverser_hardcoded.output_address
-            
         }
+        
         io_led[0] = io_dip[0]
         io_led[1] = LED_COLORS[color_index]
         
