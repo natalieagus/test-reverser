@@ -1,0 +1,20 @@
+module index_reverser_hardcoded (
+    input input_address[8],
+    output output_address[8]
+) {
+    const ODD_BIT_INDEX = 4
+    const MASK = 3
+    const MSB_INDEX = 7
+   
+    
+    always {
+        // check if we are at odd rows 
+        if (input_address[ODD_BIT_INDEX]){
+            output_address = c{input_address[MSB_INDEX:ODD_BIT_INDEX], input_address[MASK:0] ^ ODD_BIT_INDEXx{b1} }
+        }
+        else{
+            // do not reverse
+            output_address = input_address
+        }
+    }
+}
