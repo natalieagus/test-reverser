@@ -11,3 +11,4 @@
 # Journal file: /media/share/Alchitry/test-reverser/build/vivado/test-reverser.runs/synth_1/vivado.jou
 # Running On: debian, OS: Linux, CPU Frequency: , CPU Physical cores: 1, Host memory: 8328 MB
 #-----------------------------------------------------------
+source alchitry_top.tcl -notrace
